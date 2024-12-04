@@ -1,0 +1,419 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* General Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Flexbox Utilities */
+.d-flex {
+    display: flex !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.mt-3 {
+    margin-top: var(--base-size-16, 16px) !important;
+}
+
+.width-full {
+    width: 100% !important;
+}
+
+.flex-justify-end {
+    justify-content: flex-end !important;
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+
+/* Header Container */
+.header {
+    background-color: var(--bgColor-default, #fff); /* Default background color */
+    box-shadow: var(--shadow-floating-small, 0 4px 8px rgba(0, 0, 0, 0.1)); /* Soft shadow */
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+/* Menu Wrapper */
+.HeaderMenu-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    pointer-events: auto;
+    background-color: var(--bgColor-default);
+    box-shadow: var(--shadow-floating-small);
+}
+
+/* Navigation Menu */
+.HeaderMenu {
+    z-index: 100;
+    width: 100%;
+    padding-top: 68px; /* Adjust padding for content */
+    pointer-events: none;
+    contain: layout;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 1011px) {
+    .header-logged-out:not(.open) .HeaderMenu {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    .HeaderMenu.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+}
+
+/* Header Links & Button Styling */
+.header-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #007bff;
+}
+
+/* Auth Section */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.auth-buttons a {
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown Menu */
+.dropdown-toggle {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: #e6f7ff;
+    padding: 4rem 2rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero h2 {
+    color: #00509e;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Exam Cards */
+.exams {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.exam-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.exam-card h3 {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.exam-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.exam-card .btn {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.exam-card .btn:hover {
+    background-color: #e64a19;
+}
+
+/* Resources Section */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f0f8ff;
+}
+
+.features h2 {
+    font-size: 36px;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.features-intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 230px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 40px;
+    color: #ff5722;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    color: #007bff;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonial-slide {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.testimonial {
+    display: none;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.testimonial-controls {
+    margin-top: 20px;
+}
+
+.testimonial-controls button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.testimonial-controls button:hover {
+    background-color: #e64a19;
+}
+
+/* Contact Section */
+.contact-cta {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.contact-cta h3 {
+    color: #ff5722;
+    font-size: 28px;
+}
+
+.contact-cta p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-cta .cta-button {
+    background-color: #ff5722;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.contact-cta .cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* UL List in Single Row */
+ul {
+    display: flex; /* Make the list items align in a row */
+    justify-content: flex-start; /* Align to the start */
+    gap: 20px; /* Space between list items */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: #0056b3;
+}
